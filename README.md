@@ -175,3 +175,8 @@ Antes de abrir um commit, execute a suíte completa, a checagem sintática e ver
 ## Referências do repositório
 
 Este README documenta o contrato implementado no próprio serviço. Os pontos de entrada relacionados são [rotas do Reporting](src/routes/reportingRoutes.js), [middleware de autenticação](src/middlewares/auth.js), [serviço central](src/services/reportingService.js), [migration inicial](src/migrations/20260814000001-create-reporting-read-model.js) e [configuração de ambiente](.env.example).
+
+<!-- OPERAON-DOCUMENTATION-LINK -->
+## Documentação
+
+A documentação técnica padronizada está em [docs/INDEX.md](docs/INDEX.md). Ela inclui arquitetura, responsabilidades, segurança, contratos, operação, testes, runbooks e decisões.

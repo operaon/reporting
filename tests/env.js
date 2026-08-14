@@ -1,0 +1,12 @@
+process.env.NODE_ENV = 'test';
+process.env.DB_HOST = process.env.DB_HOST || 'localhost';
+process.env.DB_PORT = process.env.DB_PORT || '5432';
+process.env.DB_NAME = process.env.TEST_DB_NAME || 'operaon_reporting_test';
+process.env.DB_USER = process.env.DB_USER || 'dbadmin';
+process.env.DB_PASSWORD = process.env.DB_PASSWORD || '';
+process.env.DB_SSL = process.env.DB_SSL || 'false';
+process.env.SERVICE_API_KEY = 'reporting-test-service-key';
+process.env.JWT_ALGORITHM = 'HS256';
+process.env.JWT_SECRET = 'reporting-test-jwt-secret-change-me-please';
+process.env.JWT_ISSUER = 'operaon-identity';
+process.env.JWT_AUDIENCE = 'operaon-reporting';

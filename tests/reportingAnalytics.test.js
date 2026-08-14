@@ -14,7 +14,7 @@ const token = (overrides = {}) => jwt.sign({
   sub: '66666666-6666-4666-8666-666666666666',
   tokenType: 'access',
   iss: 'operaon-identity',
-  aud: ['operaon-api', 'operaon-reporting'],
+  aud: 'operaon-reporting',
   tenantId,
   organizationIds: [organizationId],
   permissions: ['reporting:read', 'reporting:write', 'reporting:export'],
@@ -42,6 +42,17 @@ describe('Reporting & Analytics contract', () => {
 
     const missingJwt = await request(app).get('/api/reporting/analytics/overview').set('X-Service-Key', env.serviceApiKey);
     expect(missingJwt.status).toBe(401);
+  });
+
+  test('rejeita token destinado a outra audience', async () => {
+    const wrongAudience = jwt.sign({ sub: '66666666-6666-4666-8666-666666666666', tokenType: 'access', tenantId, permissions: ['reporting:read'] }, env.jwt.secret, { algorithm: 'HS256', issuer: 'operaon-identity', audience: 'operaon-api', expiresIn: '10m' });
+    const response = await request(app).get('/api/reporting/analytics/overview').set(headers(wrongAudience));
+    expect(response.status).toBe(401);
+  });
+
+  test('não concede bypass universal a token de serviço', async () => {
+    const response = await request(app).get('/api/reporting/analytics/overview').set(headers(token({ service: true, permissions: [] })));
+    expect(response.status).toBe(403);
   });
 
   test('ingere lote, redige segredo e é idempotente', async () => {

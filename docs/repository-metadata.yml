@@ -1,0 +1,20 @@
+repository: reporting
+description: "Reporting & Analytics da Operaon para consultas analíticas, indicadores e relatórios."
+homepage: "https://github.com/operaon/reporting"
+topics:
+  - operaon
+  - reporting
+  - analytics
+  - dashboards
+  - postgresql
+  - nodejs
+custom_properties:
+  domain_owner: reporting
+  repository_type: module
+  lifecycle: active
+  documentation: docs/INDEX.md
+  security_tier: standard
+  default_branch: main
+notes:
+  - "Homepage uses the repository URL until an official public product URL is defined."
+  - "Stars, watchers, forks and audit history are GitHub-managed metrics and are not programmable repository content."

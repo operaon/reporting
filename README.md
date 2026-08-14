@@ -1,4 +1,15 @@
-# Operaon Reporting & Analytics
+# Reporting & Analytics
+
+> Reporting & Analytics da Operaon para consultas analíticas, indicadores e relatórios.
+
+| Item | Referência |
+|---|---|
+| Documentação | [docs/INDEX.md](docs/INDEX.md) |
+| Segurança | [SECURITY.md](SECURITY.md) |
+| Contribuição | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Processo de release | [docs/release-process.md](docs/release-process.md) |
+
+---
 
 Standalone responsável pelo **read model analítico** da Operaon. O serviço recebe fatos clínicos por ingestão idempotente, mantém banco próprio para consultas e produz relatórios operacionais, métricas agregadas, tendências e exportações. O módulo não substitui os sistemas de origem nem altera dados clínicos transacionais.
 

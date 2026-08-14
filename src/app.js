@@ -7,7 +7,10 @@ const { requestContext, authRateLimiter, errorHandler } = require('./middlewares
 const sequelize = require('./config/database');
 const env = require('./config/env');
 
+const { communicationContext } = require('./middlewares/communicationContext');
+
 const app = express();
+app.use(communicationContext);
 app.disable('x-powered-by');
 app.set('trust proxy', env.trustProxyHops);
 app.use(helmet());
